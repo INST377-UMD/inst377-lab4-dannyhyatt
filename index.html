@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<title>INST377 Lab 4</title>
+<script>
+  var validation = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
+</script>
+<style>
+body {
+  background-color: yellowgreen;
+  color: navajowhite;
+}
+div {
+  display: flex;
+  flex-wrap: wrap;
+  flex-basis: 40%;
+  gap: 1rem;
+}
+section {
+  background-image: radial-gradient(circle, #ff0000, #0000ff);
+  border: 2rem ridge #ff00ff;
+  padding: 2rem;
+  width: 30%;
+  aspect-ratio: 2;
+  display: block;
+  border-radius: 5rem;
+}
+</style>
+
+<h1>INST377 Lab 4</h1>
+
+<div>
+  <section>
+    <form onsubmit="alert(`Hello, ${document.getElementById('name').value}!`);">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name">
+      <button type="submit">Alert Me</button>
+    </form>
+  </section>
+  <section>
+    <button onclick="document.body.style.backgroundColor = document.body.style.backgroundColor == 'red' ? 'yellowgreen' : 'red';">Change Color</button>
+  </section>
+  <section>
+    <form action="/" onsubmit="if(document.getElementById('testbox').value.match(validation)) { alert('Invalid character detected!'); }">
+      <label for="name">Text Tester:</label>
+      <input type="text" id="testbox" name="testbox">
+      <button type="submit">Validate</button>
+    </form>
+  </section>
+
+  <section>
+    <button onclick="document.querySelector('h1').innerText += ' - Adding Text'">Add Text</button>
+  </section>
+</div>
